@@ -66,6 +66,10 @@ const galleryMarkup = images
 galleryList.insertAdjacentHTML("beforeend", galleryMarkup);
 
 galleryList.addEventListener('click', (event) => {
+    if (event.target.nodeName !== 'IMG') {
+        return;
+    }
+
     event.preventDefault();
     event.stopPropagation();
 
